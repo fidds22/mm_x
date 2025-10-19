@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #0a0a0a;
+  color: white;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff1e56, #00d9ff);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00d9ff, #7ed321);
+}
+
+/* Text Selection */
+::selection {
+  background: rgba(255, 30, 86, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(255, 30, 86, 0.3);
+  color: white;
+}
+
+/* Custom Classes */
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-paint-pink via-paint-blue to-paint-green bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  .gold-text {
+    @apply bg-gradient-to-r from-paint-gold via-paint-gold-light to-paint-gold bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: gold-shimmer 2s ease-in-out infinite;
+  }
+
+  .paint-drip {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .drip-pink {
+    background: linear-gradient(180deg, #ff1e56 0%, #ff1e56 60%, transparent 100%);
+    clip-path: polygon(
+      0% 0%, 100% 0%, 
+      100% 45%, 95% 50%, 90% 45%, 85% 55%, 80% 48%, 
+      75% 58%, 70% 45%, 65% 60%, 60% 50%, 55% 65%, 
+      50% 55%, 45% 70%, 40% 60%, 35% 75%, 30% 65%, 
+      25% 55%, 20% 45%, 15% 50%, 10% 40%, 5% 45%, 
+      0% 40%
+    );
+  }
+
+  .drip-blue {
+    background: linear-gradient(180deg, #00d9ff 0%, #00d9ff 60%, transparent 100%);
+    clip-path: polygon(
+      0% 0%, 100% 0%, 
+      100% 50%, 95% 65%, 90% 55%, 85% 70%, 80% 60%, 
+      75% 45%, 70% 55%, 65% 40%, 60% 65%, 55% 50%, 
+      50% 75%, 45% 55%, 40% 45%, 35% 60%, 30% 50%, 
+      25% 70%, 20% 60%, 15% 45%, 10% 55%, 5% 50%, 
+      0% 55%
+    );
+  }
+
+  .drip-green {
+    background: linear-gradient(180deg, #7ed321 0%, #7ed321 60%, transparent 100%);
+    clip-path: polygon(
+      0% 0%, 100% 0%, 
+      100% 60%, 95% 45%, 90% 65%, 85% 50%, 80% 70%, 
+      75% 55%, 70% 40%, 65% 65%, 60% 45%, 55% 75%, 
+      50% 50%, 45% 60%, 40% 70%, 35% 45%, 30% 55%, 
+      25% 40%, 20% 65%, 15% 55%, 10% 70%, 5% 45%, 
+      0% 50%
+    );
+  }
+
+  .drip-purple {
+    background: linear-gradient(180deg, #bd10e0 0%, #bd10e0 60%, transparent 100%);
+    clip-path: polygon(
+      0% 0%, 100% 0%, 
+      100% 55%, 95% 70%, 90% 50%, 85% 65%, 80% 45%, 
+      75% 60%, 70% 70%, 65% 50%, 60% 40%, 55% 65%, 
+      50% 75%, 45% 45%, 40% 55%, 35% 70%, 30% 40%, 
+      25% 60%, 20% 50%, 15% 65%, 10% 45%, 5% 60%, 
+      0% 45%
+    );
+  }
+
+  .paint-blob {
+    @apply absolute opacity-80 animate-blob;
+    border-radius: 50% 40% 60% 30%;
+  }
+
+  .nav-link {
+    @apply relative overflow-hidden transition-colors duration-300;
+  }
+
+  .nav-link::before {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-paint-pink to-paint-blue transform -translate-x-full transition-transform duration-300;
+  }
+
+  .nav-link:hover::before {
+    @apply translate-x-0;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 border border-white/10 backdrop-blur-sm;
+  }
+
+  .card-hover:hover {
+    @apply transform -translate-y-2 shadow-2xl border-paint-pink/50;
+    box-shadow: 0 20px 40px rgba(255, 30, 86, 0.3);
+  }
+
+  .section-bg {
+    background: 
+      radial-gradient(ellipse at center, rgba(255, 30, 86, 0.1) 0%, transparent 70%),
+      radial-gradient(ellipse at 80% 20%, rgba(0, 217, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 20% 80%, rgba(126, 211, 33, 0.1) 0%, transparent 50%);
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-paint-pink to-paint-blue px-8 py-4 rounded-full text-white font-semibold hover:scale-105 transition-transform duration-300 shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply border border-paint-blue px-8 py-4 rounded-full text-paint-blue hover:bg-paint-blue hover:text-white transition-all duration-300;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
+  }
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .paint-drip {
+    height: 100px;
+  }
+  
+  .gradient-text {
+    background-size: 300% 300%;
+  }
+}
