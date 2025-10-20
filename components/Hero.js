@@ -150,29 +150,33 @@ const Hero = () => {
           ref={subtitleRef}
           className="text-2xl md:text-4xl lg:text-5xl mb-8 text-gray-300 font-subtitle font-light"
         >
-          Exposición Individual
+          <span className="font-mono tracking-wider">EXPOSICIÓN INDIVIDUAL</span>
         </h2>
         
         <p 
           ref={descriptionRef}
           className="text-lg md:text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed font-body"
         >
-          Una exploración del color y la forma como lenguajes en movimiento. Paisajes internos y energías colectivas que dialogan entre lo ancestral y lo contemporáneo.
+          <span className="font-mono text-sm leading-loose tracking-wide">
+            UNA EXPLORACIÓN DEL COLOR Y LA FORMA COMO LENGUAJES EN MOVIMIENTO.<br/>
+            PAISAJES INTERNOS Y ENERGÍAS COLECTIVAS QUE DIALOGAN ENTRE LO ANCESTRAL Y LO CONTEMPORÁNEO.<br/>
+            CADA OBRA COMO OBJETO DE ENERGÍA Y CONTEMPLACIÓN.
+          </span>
         </p>
         
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button 
             onClick={scrollToAbout}
-            className="btn-primary font-subtitle text-lg px-10 py-5"
+            className="btn-primary font-subtitle text-lg px-10 py-5 font-mono tracking-wider"
           >
-            Ver Obras
+            [VER OBRAS]
           </button>
           
           <button 
             onClick={() => window.open('#contacto', '_self')}
-            className="btn-secondary font-subtitle text-lg px-10 py-5"
+            className="btn-secondary font-subtitle text-lg px-10 py-5 font-mono tracking-wider"
           >
-            Información de la Exposición
+            [INFORMACIÓN DE LA EXPOSICIÓN]
           </button>
         </div>
       </div>

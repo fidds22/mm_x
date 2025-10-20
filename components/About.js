@@ -79,43 +79,43 @@ const About = () => {
   const skills = [
     {
       icon: <Palette className="w-8 h-8" />,
-      title: 'Pinturas',
-      description: 'Obras en madera con exploración del color y forma',
+      title: '[PINTURAS]',
+      description: 'OBRAS EN MADERA CON EXPLORACIÓN DEL COLOR Y FORMA',
       color: 'text-paint-pink',
       bgColor: 'bg-paint-pink/20'
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: 'Movimiento',
-      description: 'Líneas fluidas y gestos orgánicos en movimiento',
+      title: '[MOVIMIENTO]',
+      description: 'LÍNEAS FLUIDAS Y GESTOS ORGÁNICOS EN MOVIMIENTO',
       color: 'text-paint-blue',
       bgColor: 'bg-paint-blue/20'
     },
     {
       icon: <Code className="w-8 h-8" />,
-      title: 'Simbolismo',
-      description: 'Ojos, ondas, círculos y portales como vocabulario',
+      title: '[SIMBOLISMO]',
+      description: 'OJOS, ONDAS, CÍRCULOS Y PORTALES COMO VOCABULARIO',
       color: 'text-paint-green',
       bgColor: 'bg-paint-green/20'
     },
     {
       icon: <Database className="w-8 h-8" />,
-      title: 'Paisajes Internos',
-      description: 'Composiciones que evocan energías colectivas',
+      title: '[PAISAJES INTERNOS]',
+      description: 'COMPOSICIONES QUE EVOCAN ENERGÍAS COLECTIVAS',
       color: 'text-paint-purple',
       bgColor: 'bg-paint-purple/20'
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
-      title: 'Contemplación',
-      description: 'Cada obra como objeto de energía y contemplación',
+      title: '[CONTEMPLACIÓN]',
+      description: 'CADA OBRA COMO OBJETO DE ENERGÍA Y CONTEMPLACIÓN',
       color: 'text-paint-orange',
       bgColor: 'bg-paint-orange/20'
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: 'Diálogo',
-      description: 'Lo ancestral y lo contemporáneo en equilibrio',
+      title: '[DIÁLOGO]',
+      description: 'LO ANCESTRAL Y LO CONTEMPORÁNEO EN EQUILIBRIO',
       color: 'text-paint-gold',
       bgColor: 'bg-paint-gold/20'
     }
@@ -141,38 +141,43 @@ const About = () => {
             </div>
             
             <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
-              <p>
-                La <span className="text-paint-pink font-semibold">exposición individual</span> de Manoela Madera 
-                reúne una serie de pinturas y paneles en madera que profundizan en la exploración del color y la forma como lenguajes en movimiento.
+              <p className="font-mono text-sm leading-loose tracking-wide">
+                <span className="text-paint-pink font-semibold">[EXPOSICIÓN INDIVIDUAL]</span><br/>
+                MANOELA MADERA REÚNE UNA SERIE DE PINTURAS Y PANELES EN MADERA<br/>
+                QUE PROFUNDIZAN EN LA EXPLORACIÓN DEL COLOR Y LA FORMA<br/>
+                COMO LENGUAJES EN MOVIMIENTO.
               </p>
-              <p>
-                A través de <span className="text-paint-blue font-semibold">líneas fluidas, gestos orgánicos y contrastes vibrantes</span>, 
-                la artista construye composiciones que evocan paisajes internos y energías colectivas.
+              <p className="font-mono text-sm leading-loose tracking-wide">
+                <span className="text-paint-blue font-semibold">[LÍNEAS FLUIDAS, GESTOS ORGÁNICOS Y CONTRASTES VIBRANTES]</span><br/>
+                LA ARTISTA CONSTRUYE COMPOSICIONES QUE EVOCAN PAISAJES INTERNOS<br/>
+                Y ENERGÍAS COLECTIVAS EN CONSTANTE TRANSFORMACIÓN.
               </p>
-              <p>
-                Los motivos recurrentes —<span className="text-paint-green font-semibold">ojos, ondas, círculos y portales</span>— 
-                conforman un vocabulario simbólico que se transforma y expande, invitando a reconocer patrones familiares dentro de la abstracción.
+              <p className="font-mono text-sm leading-loose tracking-wide">
+                <span className="text-paint-green font-semibold">[OJOS, ONDAS, CÍRCULOS Y PORTALES]</span><br/>
+                CONFORMAN UN VOCABULARIO SIMBÓLICO QUE SE TRANSFORMA Y EXPANDE,<br/>
+                INVITANDO A RECONOCER PATRONES FAMILIARES DENTRO DE LA ABSTRACCIÓN.
               </p>
             </div>
 
             <div className="space-y-4">
               <div className="bg-gradient-to-r from-paint-pink/10 to-paint-blue/10 p-6 rounded-xl border border-paint-pink/20">
-                <h3 className="text-xl font-semibold text-paint-pink mb-2">Inauguración</h3>
-                <p className="text-gray-300">
-                  <span className="font-semibold">Jueves, 24 de octubre a las 7:00 p.m.</span><br/>
-                  Instituto de Subcultura
+                <h3 className="text-xl font-semibold text-paint-pink mb-2 font-mono tracking-wider">[INAUGURACIÓN]</h3>
+                <p className="text-gray-300 font-mono text-sm leading-loose tracking-wide">
+                  <span className="font-semibold">JUEVES, 24 DE OCTUBRE A LAS 7:00 P.M.</span><br/>
+                  INSTITUTO DE SUBCULTURA<br/>
+                  <span className="text-paint-blue">ENTRADA LIBRE</span>
                 </p>
               </div>
               
               <div className="flex flex-wrap gap-4">
-                <span className="px-4 py-2 bg-paint-pink/20 text-paint-pink rounded-full text-sm font-medium">
-                  Pinturas & Paneles
+                <span className="px-4 py-2 bg-paint-pink/20 text-paint-pink rounded-full text-sm font-medium font-mono tracking-wider">
+                  [PINTURAS & PANELES]
                 </span>
-                <span className="px-4 py-2 bg-paint-blue/20 text-paint-blue rounded-full text-sm font-medium">
-                  Exploración del Color
+                <span className="px-4 py-2 bg-paint-blue/20 text-paint-blue rounded-full text-sm font-medium font-mono tracking-wider">
+                  [EXPLORACIÓN DEL COLOR]
                 </span>
-                <span className="px-4 py-2 bg-paint-green/20 text-paint-green rounded-full text-sm font-medium">
-                  Abstracción Contemporánea
+                <span className="px-4 py-2 bg-paint-green/20 text-paint-green rounded-full text-sm font-medium font-mono tracking-wider">
+                  [ABSTRACCIÓN CONTEMPORÁNEA]
                 </span>
               </div>
             </div>
@@ -199,8 +204,8 @@ const About = () => {
 
         {/* Exhibition Details */}
         <div ref={skillsRef} className="mt-20">
-          <h3 className="text-3xl md:text-4xl font-bold font-display text-center mb-12 gradient-text">
-            Detalles de la Exposición
+          <h3 className="text-3xl md:text-4xl font-bold font-display text-center mb-12 gradient-text font-mono tracking-wider">
+            [DETALLES DE LA EXPOSICIÓN]
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

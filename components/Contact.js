@@ -87,36 +87,36 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <Calendar className="w-8 h-8" />,
-      title: 'Inauguración',
-      value: 'Jueves, 24 de octubre',
-      subtitle: '7:00 p.m.',
+      title: '[INAUGURACIÓN]',
+      value: 'JUEVES, 24 DE OCTUBRE',
+      subtitle: '7:00 P.M.',
       color: 'text-paint-pink',
       bgColor: 'bg-paint-pink/20',
       link: '#calendar'
     },
     {
       icon: <MapPin className="w-8 h-8" />,
-      title: 'Ubicación',
-      value: 'Instituto de Subcultura',
-      subtitle: 'Dirección del evento',
+      title: '[UBICACIÓN]',
+      value: 'INSTITUTO DE SUBCULTURA',
+      subtitle: 'DIRECCIÓN DEL EVENTO',
       color: 'text-paint-blue',
       bgColor: 'bg-paint-blue/20',
       link: 'https://maps.google.com'
     },
     {
       icon: <Mail className="w-8 h-8" />,
-      title: 'Contacto',
-      value: 'info@manoelamadera.com',
-      subtitle: 'Para más información',
+      title: '[CONTACTO]',
+      value: 'INFO@MANOELAMADERA.COM',
+      subtitle: 'PARA MÁS INFORMACIÓN',
       color: 'text-paint-green',
       bgColor: 'bg-paint-green/20',
       link: 'mailto:info@manoelamadera.com'
     },
     {
       icon: <MessageCircle className="w-8 h-8" />,
-      title: 'Redes Sociales',
-      value: '@manoelamadera',
-      subtitle: 'Síguenos para actualizaciones',
+      title: '[REDES SOCIALES]',
+      value: '@MANOELAMADERA',
+      subtitle: 'SÍGUENOS PARA ACTUALIZACIONES',
       color: 'text-paint-purple',
       bgColor: 'bg-paint-purple/20',
       link: '#social'
@@ -199,13 +199,14 @@ const Contact = () => {
             ref={titleRef}
             className="text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-8"
           >
-            <div className="intertwining-subtle" data-text="Información de la Exposición">
-              <span className="intertwining-subtle-main">Información de la Exposición</span>
+            <div className="intertwining-subtle" data-text="[INFORMACIÓN DE LA EXPOSICIÓN]">
+              <span className="intertwining-subtle-main font-mono tracking-wider">[INFORMACIÓN DE LA EXPOSICIÓN]</span>
             </div>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-paint-purple to-paint-pink mx-auto mb-8"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Únete a nosotros en la inauguración de la exposición de Manoela Madera y descubre el universo donde el color, el ritmo y el gesto se entrelazan.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-mono text-sm leading-loose tracking-wide">
+            ÚNETE A NOSOTROS EN LA INAUGURACIÓN DE LA EXPOSICIÓN DE MANOELA MADERA<br/>
+            Y DESCUBRE EL UNIVERSO DONDE EL COLOR, EL RITMO Y EL GESTO SE ENTRELAZAN.
           </p>
         </div>
 

@@ -46,10 +46,10 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { id: 'inicio', label: 'Inicio', baseColor: 'text-paint-pink', hoverColor: 'hover:text-white' },
-    { id: 'sobre-mi', label: 'Exposición', baseColor: 'text-paint-teal', hoverColor: 'hover:text-white' },
-    { id: 'proyectos', label: 'Obras', baseColor: 'text-paint-lime', hoverColor: 'hover:text-white' },
-    { id: 'contacto', label: 'Información', baseColor: 'text-paint-purple', hoverColor: 'hover:text-white' },
+    { id: 'inicio', label: '[INICIO]', baseColor: 'text-paint-pink', hoverColor: 'hover:text-white' },
+    { id: 'sobre-mi', label: '[EXPOSICIÓN]', baseColor: 'text-paint-teal', hoverColor: 'hover:text-white' },
+    { id: 'proyectos', label: '[OBRAS]', baseColor: 'text-paint-lime', hoverColor: 'hover:text-white' },
+    { id: 'contacto', label: '[INFORMACIÓN]', baseColor: 'text-paint-purple', hoverColor: 'hover:text-white' },
   ];
 
   return (

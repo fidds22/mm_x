@@ -65,6 +65,10 @@ body {
   .font-body {
     font-family: 'Source Sans Pro', sans-serif;
   }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+  }
 
   .gradient-text {
     @apply text-white;
@@ -334,6 +338,28 @@ body {
 
   .glass-card {
     @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
+  }
+
+  /* Dummy Text Monospace Styles */
+  .dummy-text {
+    @apply font-mono text-sm leading-loose tracking-wide;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+  }
+
+  .dummy-title {
+    @apply font-mono font-bold tracking-wider;
+    letter-spacing: 0.15em;
+  }
+
+  .dummy-subtitle {
+    @apply font-mono text-sm tracking-wide;
+    letter-spacing: 0.1em;
+  }
+
+  .dummy-button {
+    @apply font-mono tracking-wider;
+    letter-spacing: 0.1em;
   }
 }
 
