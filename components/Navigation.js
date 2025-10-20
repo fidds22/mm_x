@@ -15,6 +15,20 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Scroll lock when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -24,10 +38,7 @@ const Navigation = () => {
     if (element) {
       gsap.to(window, {
         duration: 1.5,
-        scrollTo: {
-          y: element,
-          offsetY: 80
-        },
+        scrollTo: element.offsetTop - 80,
         ease: 'power3.inOut'
       });
     }
@@ -35,10 +46,10 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { id: 'inicio', label: 'Inicio', color: 'hover:text-paint-pink' },
-    { id: 'sobre-mi', label: 'Sobre Mí', color: 'hover:text-paint-blue' },
-    { id: 'proyectos', label: 'Proyectos', color: 'hover:text-paint-green' },
-    { id: 'contacto', label: 'Contacto', color: 'hover:text-paint-purple' },
+    { id: 'inicio', label: 'Inicio', baseColor: 'text-paint-pink', hoverColor: 'hover:text-white' },
+    { id: 'sobre-mi', label: 'Exposición', baseColor: 'text-paint-teal', hoverColor: 'hover:text-white' },
+    { id: 'proyectos', label: 'Obras', baseColor: 'text-paint-lime', hoverColor: 'hover:text-white' },
+    { id: 'contacto', label: 'Información', baseColor: 'text-paint-purple', hoverColor: 'hover:text-white' },
   ];
 
   return (
@@ -50,45 +61,48 @@ const Navigation = () => {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div 
-              className="text-2xl md:text-3xl font-bold font-display gold-text cursor-pointer"
+              className="text-3xl md:text-4xl font-light font-subtitle cursor-pointer"
+              style={{ letterSpacing: '-0.22em' }}
               onClick={() => scrollToSection('inicio')}
             >
-              PORTFOLIO
+              <div className="intertwining-gold" data-text="MM">
+                <span className="intertwining-gold-main">MM</span>
+              </div>
             </div>
             
-            {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`nav-link text-white ${item.color} transition-colors font-medium`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Mobile Menu Button */}
+            {/* Hamburger Menu Button - Always Shows Menu Icon */}
             <button 
-              className="md:hidden text-white p-2"
+              className="text-white p-2 hover:text-paint-pink transition-colors"
               onClick={toggleMenu}
+              aria-label="Toggle navigation menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              <Menu size={24} />
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        <div className={`md:hidden fixed top-0 left-0 w-full h-full bg-dark-900/95 backdrop-blur-md transition-transform duration-300 ${
+        {/* Hamburger Menu - All Screen Sizes */}
+        <div className={`fixed top-0 left-0 w-full h-full bg-paint-deep-blue transition-transform duration-300 ${
           isMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}>
-          <div className="flex flex-col items-center justify-center h-full space-y-8 text-2xl font-display">
+          {/* Close Button */}
+          <div className="absolute top-6 right-6">
+            <button 
+              className="text-white p-2 hover:text-paint-pink transition-colors"
+              onClick={toggleMenu}
+              aria-label="Close navigation menu"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          
+          {/* Navigation Links */}
+          <div className="flex flex-col items-center justify-center h-full space-y-12 text-5xl font-display">
             {navItems.map((item, index) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-white ${item.color} transition-colors transform hover:scale-110`}
+                className={`${item.baseColor} ${item.hoverColor} transition-colors transform hover:scale-110 font-bold`}
                 style={{ 
                   animationDelay: isMenuOpen ? `${index * 0.1}s` : '0s'
                 }}

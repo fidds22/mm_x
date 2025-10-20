@@ -10,38 +10,48 @@ const Hero = () => {
   const ctaRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Hero text animations
-      gsap.from(titleRef.current, {
-        duration: 1.5,
-        y: 100,
-        opacity: 0,
-        ease: 'power3.out'
-      });
+    // Small delay to ensure elements are mounted
+    const timer = setTimeout(() => {
+      const ctx = gsap.context(() => {
+      // Hero text animations with null checks
+      if (titleRef.current) {
+        gsap.from(titleRef.current, {
+          duration: 1.5,
+          y: 100,
+          opacity: 0,
+          ease: 'power3.out'
+        });
+      }
 
-      gsap.from(subtitleRef.current, {
-        duration: 1.5,
-        y: 50,
-        opacity: 0,
-        ease: 'power3.out',
-        delay: 0.3
-      });
+      if (subtitleRef.current) {
+        gsap.from(subtitleRef.current, {
+          duration: 1.5,
+          y: 50,
+          opacity: 0,
+          ease: 'power3.out',
+          delay: 0.3
+        });
+      }
 
-      gsap.from(descriptionRef.current, {
-        duration: 1.5,
-        y: 30,
-        opacity: 0,
-        ease: 'power3.out',
-        delay: 0.6
-      });
+      if (descriptionRef.current) {
+        gsap.from(descriptionRef.current, {
+          duration: 1.5,
+          y: 30,
+          opacity: 0,
+          ease: 'power3.out',
+          delay: 0.6
+        });
+      }
 
-      gsap.from(ctaRef.current, {
-        duration: 1.5,
-        y: 30,
-        opacity: 0,
-        ease: 'power3.out',
-        delay: 0.9
-      });
+      if (ctaRef.current) {
+        gsap.from(ctaRef.current, {
+          duration: 1.5,
+          y: 30,
+          opacity: 0,
+          ease: 'power3.out',
+          delay: 0.9
+        });
+      }
 
       // Paint blobs rotation
       gsap.to('.paint-blob', {
@@ -87,9 +97,16 @@ const Hero = () => {
         delay: 0.5
       });
 
-    }, heroRef);
+      }, heroRef);
+    }, 100); // 100ms delay
 
-    return () => ctx.revert();
+    return () => {
+      clearTimeout(timer);
+      if (heroRef.current) {
+        const ctx = gsap.context(() => {}, heroRef);
+        ctx.revert();
+      }
+    };
   }, []);
 
   const scrollToAbout = () => {
@@ -97,10 +114,7 @@ const Hero = () => {
     if (aboutElement) {
       gsap.to(window, {
         duration: 1.5,
-        scrollTo: {
-          y: aboutElement,
-          offsetY: 80
-        },
+        scrollTo: aboutElement.offsetTop - 80,
         ease: 'power3.inOut'
       });
     }
@@ -122,38 +136,43 @@ const Hero = () => {
       <div className="text-center z-10 px-6 max-w-5xl mx-auto">
         <h1 
           ref={titleRef}
-          className="text-6xl md:text-8xl lg:text-9xl font-bold font-display mb-6 gradient-text leading-tight"
+          className="text-6xl md:text-8xl lg:text-9xl font-bold font-display mb-6 leading-tight"
         >
-          CREATIVO
+          <div className="intertwining-multi" data-text="MANOELA MADERA">
+            <span className="layer-1">MANOELA MADERA</span>
+            <span className="layer-2">MANOELA MADERA</span>
+            <span className="layer-3">MANOELA MADERA</span>
+            <span className="layer-main">MANOELA MADERA</span>
+          </div>
         </h1>
         
         <h2 
           ref={subtitleRef}
-          className="text-2xl md:text-4xl lg:text-5xl mb-8 text-gray-300 font-display font-light"
+          className="text-2xl md:text-4xl lg:text-5xl mb-8 text-gray-300 font-subtitle font-light"
         >
-          Desarrollador & Diseñador
+          Exposición Individual
         </h2>
         
         <p 
           ref={descriptionRef}
-          className="text-lg md:text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed"
+          className="text-lg md:text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed font-body"
         >
-          Transformando ideas en experiencias digitales extraordinarias con código y creatividad
+          Una exploración del color y la forma como lenguajes en movimiento. Paisajes internos y energías colectivas que dialogan entre lo ancestral y lo contemporáneo.
         </p>
         
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button 
             onClick={scrollToAbout}
-            className="btn-primary font-display text-lg px-10 py-5"
+            className="btn-primary font-subtitle text-lg px-10 py-5"
           >
-            Ver Mi Trabajo
+            Ver Obras
           </button>
           
           <button 
             onClick={() => window.open('#contacto', '_self')}
-            className="btn-secondary font-display text-lg px-10 py-5"
+            className="btn-secondary font-subtitle text-lg px-10 py-5"
           >
-            Contáctame
+            Información de la Exposición
           </button>
         </div>
       </div>

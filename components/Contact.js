@@ -86,40 +86,40 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <Mail className="w-8 h-8" />,
-      title: 'Email',
-      value: 'hola@portfolio.com',
-      subtitle: 'Respondo en 24 horas',
+      icon: <Calendar className="w-8 h-8" />,
+      title: 'Inauguración',
+      value: 'Jueves, 24 de octubre',
+      subtitle: '7:00 p.m.',
       color: 'text-paint-pink',
       bgColor: 'bg-paint-pink/20',
-      link: 'mailto:hola@portfolio.com'
+      link: '#calendar'
     },
     {
       icon: <MapPin className="w-8 h-8" />,
       title: 'Ubicación',
-      value: 'Ciudad de México, MX',
-      subtitle: 'Disponible remotamente',
+      value: 'Instituto de Subcultura',
+      subtitle: 'Dirección del evento',
       color: 'text-paint-blue',
       bgColor: 'bg-paint-blue/20',
       link: 'https://maps.google.com'
     },
     {
-      icon: <Phone className="w-8 h-8" />,
-      title: 'Teléfono',
-      value: '+52 123 456 7890',
-      subtitle: 'WhatsApp disponible',
+      icon: <Mail className="w-8 h-8" />,
+      title: 'Contacto',
+      value: 'info@manoelamadera.com',
+      subtitle: 'Para más información',
       color: 'text-paint-green',
       bgColor: 'bg-paint-green/20',
-      link: 'tel:+521234567890'
+      link: 'mailto:info@manoelamadera.com'
     },
     {
-      icon: <Calendar className="w-8 h-8" />,
-      title: 'Reunión',
-      value: 'Agendar llamada',
-      subtitle: 'Consulta gratuita 30 min',
+      icon: <MessageCircle className="w-8 h-8" />,
+      title: 'Redes Sociales',
+      value: '@manoelamadera',
+      subtitle: 'Síguenos para actualizaciones',
       color: 'text-paint-purple',
       bgColor: 'bg-paint-purple/20',
-      link: '#calendar'
+      link: '#social'
     }
   ];
 
@@ -197,13 +197,15 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 
             ref={titleRef}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-8 gold-text"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-8"
           >
-            Conectemos
+            <div className="intertwining-subtle" data-text="Información de la Exposición">
+              <span className="intertwining-subtle-main">Información de la Exposición</span>
+            </div>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-paint-purple to-paint-pink mx-auto mb-8"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            ¿Tienes un proyecto en mente? ¡Hablemos y creemos algo increíble juntos!
+            Únete a nosotros en la inauguración de la exposición de Manoela Madera y descubre el universo donde el color, el ritmo y el gesto se entrelazan.
           </p>
         </div>
 
@@ -254,114 +256,63 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Quick Stats */}
+            {/* Exhibition Stats */}
             <div className="grid grid-cols-3 gap-4 mt-12">
               <div className="text-center glass-card p-4 rounded-xl">
-                <div className="text-3xl font-bold gradient-text">5+</div>
-                <div className="text-sm text-gray-400">Años experiencia</div>
+                <div className="text-3xl font-bold gradient-text">24</div>
+                <div className="text-sm text-gray-400">Octubre</div>
               </div>
               <div className="text-center glass-card p-4 rounded-xl">
-                <div className="text-3xl font-bold gradient-text">50+</div>
-                <div className="text-sm text-gray-400">Proyectos completados</div>
+                <div className="text-3xl font-bold gradient-text">7PM</div>
+                <div className="text-sm text-gray-400">Inauguración</div>
               </div>
               <div className="text-center glass-card p-4 rounded-xl">
-                <div className="text-3xl font-bold gradient-text">24h</div>
-                <div className="text-sm text-gray-400">Tiempo respuesta</div>
+                <div className="text-3xl font-bold gradient-text">∞</div>
+                <div className="text-sm text-gray-400">Contemplación</div>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Exhibition Details */}
           <div ref={formRef} className="glass-card p-8 rounded-2xl">
             <h3 className="text-3xl font-bold font-display mb-6 gradient-text">
-              Envíame un mensaje
+              Detalles del Evento
             </h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    Nombre *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-paint-pink focus:ring-2 focus:ring-paint-pink/20 transition-all"
-                    placeholder="Tu nombre"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-paint-blue focus:ring-2 focus:ring-paint-blue/20 transition-all"
-                    placeholder="tu@email.com"
-                  />
+            <div className="space-y-6">
+              <div className="bg-gradient-to-r from-paint-pink/10 to-paint-blue/10 p-6 rounded-xl border border-paint-pink/20">
+                <h4 className="text-xl font-semibold text-paint-pink mb-3">Manoela Madera - Exposición Individual</h4>
+                <p className="text-gray-300 mb-4">
+                  Una exploración del color y la forma como lenguajes en movimiento. 
+                  Paisajes internos y energías colectivas que dialogan entre lo ancestral y lo contemporáneo.
+                </p>
+                <div className="space-y-2 text-sm text-gray-400">
+                  <p><span className="font-semibold text-paint-blue">Fecha:</span> Jueves, 24 de octubre</p>
+                  <p><span className="font-semibold text-paint-blue">Hora:</span> 7:00 p.m.</p>
+                  <p><span className="font-semibold text-paint-blue">Lugar:</span> Instituto de Subcultura</p>
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                  Asunto *
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-paint-green focus:ring-2 focus:ring-paint-green/20 transition-all"
-                  placeholder="¿En qué puedo ayudarte?"
-                />
+              <div className="bg-gradient-to-r from-paint-green/10 to-paint-purple/10 p-6 rounded-xl border border-paint-green/20">
+                <h4 className="text-xl font-semibold text-paint-green mb-3">Sobre la Obra</h4>
+                <p className="text-gray-300 mb-4">
+                  Cada obra funciona como un objeto de energía y contemplación. Los motivos recurrentes —ojos, ondas, círculos y portales— 
+                  conforman un vocabulario simbólico que se transforma y expande.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-paint-pink/20 text-paint-pink rounded-full text-sm">Pinturas</span>
+                  <span className="px-3 py-1 bg-paint-blue/20 text-paint-blue rounded-full text-sm">Paneles en madera</span>
+                  <span className="px-3 py-1 bg-paint-green/20 text-paint-green rounded-full text-sm">Abstracción</span>
+                </div>
               </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Mensaje *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows="5"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-paint-purple focus:ring-2 focus:ring-paint-purple/20 transition-all resize-none"
-                  placeholder="Cuéntame sobre tu proyecto..."
-                />
+              <div className="text-center">
+                <button className="bg-gradient-to-r from-paint-purple to-paint-pink px-8 py-4 rounded-lg text-white font-semibold hover:scale-105 transition-transform duration-300 flex items-center justify-center space-x-2 mx-auto">
+                  <Calendar className="w-5 h-5" />
+                  <span>Agregar al Calendario</span>
+                </button>
               </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-paint-purple to-paint-pink px-8 py-4 rounded-lg text-white font-semibold hover:scale-105 transition-transform duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    <span>Enviando...</span>
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    <span>Enviar Mensaje</span>
-                  </>
-                )}
-              </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>

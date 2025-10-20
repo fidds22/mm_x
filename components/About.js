@@ -78,44 +78,44 @@ const About = () => {
 
   const skills = [
     {
-      icon: <Code className="w-8 h-8" />,
-      title: 'Frontend',
-      description: 'React, Next.js, Vue.js, TypeScript',
+      icon: <Palette className="w-8 h-8" />,
+      title: 'Pinturas',
+      description: 'Obras en madera con exploración del color y forma',
       color: 'text-paint-pink',
       bgColor: 'bg-paint-pink/20'
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: 'Animaciones',
-      description: 'GSAP, Framer Motion, CSS3, WebGL',
+      title: 'Movimiento',
+      description: 'Líneas fluidas y gestos orgánicos en movimiento',
       color: 'text-paint-blue',
       bgColor: 'bg-paint-blue/20'
     },
     {
-      icon: <Palette className="w-8 h-8" />,
-      title: 'Diseño',
-      description: 'UI/UX, Figma, Adobe Suite, Sketch',
+      icon: <Code className="w-8 h-8" />,
+      title: 'Simbolismo',
+      description: 'Ojos, ondas, círculos y portales como vocabulario',
       color: 'text-paint-green',
       bgColor: 'bg-paint-green/20'
     },
     {
       icon: <Database className="w-8 h-8" />,
-      title: 'Backend',
-      description: 'Node.js, Python, MongoDB, PostgreSQL',
+      title: 'Paisajes Internos',
+      description: 'Composiciones que evocan energías colectivas',
       color: 'text-paint-purple',
       bgColor: 'bg-paint-purple/20'
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
-      title: 'Mobile',
-      description: 'React Native, Flutter, PWA',
+      title: 'Contemplación',
+      description: 'Cada obra como objeto de energía y contemplación',
       color: 'text-paint-orange',
       bgColor: 'bg-paint-orange/20'
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: 'Web3',
-      description: 'Blockchain, Smart Contracts, DeFi',
+      title: 'Diálogo',
+      description: 'Lo ancestral y lo contemporáneo en equilibrio',
       color: 'text-paint-gold',
       bgColor: 'bg-paint-gold/20'
     }
@@ -132,37 +132,49 @@ const About = () => {
           {/* Content */}
           <div ref={contentRef} className="space-y-8">
             <div>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-8 gold-text">
-                Sobre Mí
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-8">
+                <div className="intertwining-subtle" data-text="Sobre la Exposición">
+                  <span className="intertwining-subtle-main">Sobre la Exposición</span>
+                </div>
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-paint-pink to-paint-blue mb-8"></div>
             </div>
             
             <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
               <p>
-                Soy un <span className="text-paint-pink font-semibold">desarrollador apasionado</span> por 
-                crear experiencias digitales únicas que combinan funcionalidad excepcional con arte visual impactante.
+                La <span className="text-paint-pink font-semibold">exposición individual</span> de Manoela Madera 
+                reúne una serie de pinturas y paneles en madera que profundizan en la exploración del color y la forma como lenguajes en movimiento.
               </p>
               <p>
-                Mi enfoque se centra en el <span className="text-paint-blue font-semibold">diseño moderno</span>, 
-                las animaciones fluidas y la experiencia de usuario excepcional que deja una impresión duradera.
+                A través de <span className="text-paint-blue font-semibold">líneas fluidas, gestos orgánicos y contrastes vibrantes</span>, 
+                la artista construye composiciones que evocan paisajes internos y energías colectivas.
               </p>
               <p>
-                Especializado en <span className="text-paint-green font-semibold">tecnologías web modernas</span> 
-                como React, Next.js, GSAP y más, para dar vida a ideas creativas y convertirlas en realidad digital.
+                Los motivos recurrentes —<span className="text-paint-green font-semibold">ojos, ondas, círculos y portales</span>— 
+                conforman un vocabulario simbólico que se transforma y expande, invitando a reconocer patrones familiares dentro de la abstracción.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <span className="px-4 py-2 bg-paint-pink/20 text-paint-pink rounded-full text-sm font-medium">
-                5+ años experiencia
-              </span>
-              <span className="px-4 py-2 bg-paint-blue/20 text-paint-blue rounded-full text-sm font-medium">
-                50+ proyectos completados
-              </span>
-              <span className="px-4 py-2 bg-paint-green/20 text-paint-green rounded-full text-sm font-medium">
-                Disponible para freelance
-              </span>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-paint-pink/10 to-paint-blue/10 p-6 rounded-xl border border-paint-pink/20">
+                <h3 className="text-xl font-semibold text-paint-pink mb-2">Inauguración</h3>
+                <p className="text-gray-300">
+                  <span className="font-semibold">Jueves, 24 de octubre a las 7:00 p.m.</span><br/>
+                  Instituto de Subcultura
+                </p>
+              </div>
+              
+              <div className="flex flex-wrap gap-4">
+                <span className="px-4 py-2 bg-paint-pink/20 text-paint-pink rounded-full text-sm font-medium">
+                  Pinturas & Paneles
+                </span>
+                <span className="px-4 py-2 bg-paint-blue/20 text-paint-blue rounded-full text-sm font-medium">
+                  Exploración del Color
+                </span>
+                <span className="px-4 py-2 bg-paint-green/20 text-paint-green rounded-full text-sm font-medium">
+                  Abstracción Contemporánea
+                </span>
+              </div>
             </div>
           </div>
           
@@ -185,10 +197,10 @@ const About = () => {
           </div>
         </div>
 
-        {/* Skills Grid */}
+        {/* Exhibition Details */}
         <div ref={skillsRef} className="mt-20">
           <h3 className="text-3xl md:text-4xl font-bold font-display text-center mb-12 gradient-text">
-            Habilidades & Tecnologías
+            Detalles de la Exposición
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

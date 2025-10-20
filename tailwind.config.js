@@ -16,6 +16,9 @@ module.exports = {
           orange: '#f39c12',
           gold: '#ffd700',
           'gold-light': '#ffb347',
+          'deep-blue': '#1a2b3c',
+          'teal': '#20b2aa',
+          'lime': '#32cd32',
         },
         dark: {
           900: '#0a0a0a',
@@ -24,8 +27,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        'display': ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
-        'body': ['Inter', 'system-ui', 'sans-serif'],
+        'display': ['Playfair Display', 'serif'],
+        'subtitle': ['Inter', 'sans-serif'],
+        'body': ['Source Sans Pro', 'sans-serif'],
         'mono': ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       fontSize: {
@@ -34,22 +38,12 @@ module.exports = {
         '9xl': '8rem',
       },
       animation: {
-        'gradient-shift': 'gradientShift 3s ease-in-out infinite',
-        'gold-shimmer': 'goldShimmer 2s ease-in-out infinite',
         'blob': 'blob 8s ease-in-out infinite',
         'float': 'float 6s ease-in-out infinite',
         'drip': 'drip 2s ease-out forwards',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
-        gradientShift: {
-          '0%, 100%': { 'background-position': '0% 50%' },
-          '50%': { 'background-position': '100% 50%' },
-        },
-        goldShimmer: {
-          '0%, 100%': { 'background-position': '0% 50%' },
-          '50%': { 'background-position': '100% 50%' },
-        },
         blob: {
           '0%, 100%': { 
             transform: 'translate(0, 0) scale(1) rotate(0deg)',
