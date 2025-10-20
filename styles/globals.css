@@ -372,12 +372,45 @@ body {
   }
 
   .stats-card {
-    @apply glass-card p-4 rounded-xl hover:scale-105 transition-transform duration-300 border border-white/10;
+    @apply glass-card p-6 rounded-xl hover:scale-105 transition-all duration-300 border border-white/20;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .stats-card:hover {
-    border-color: rgba(189, 16, 224, 0.3);
-    box-shadow: 0 5px 15px rgba(189, 16, 224, 0.2);
+    border-color: rgba(189, 16, 224, 0.5);
+    box-shadow: 0 8px 25px rgba(189, 16, 224, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .stats-card .gradient-text {
+    background: linear-gradient(135deg, #ff1e56, #00d9ff, #7ed321);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+}
+
+/* Desktop Enhancements */
+@media (min-width: 1024px) {
+  .stats-card {
+    min-height: 140px;
+    padding: 2rem;
+  }
+  
+  .stats-card .gradient-text {
+    font-size: 3rem;
+  }
+  
+  .stats-card:hover {
+    transform: translateY(-4px) scale(1.02);
   }
 }
 
@@ -389,5 +422,10 @@ body {
   
   .gradient-text {
     background-size: 300% 300%;
+  }
+  
+  .stats-card {
+    min-height: 100px;
+    padding: 1.5rem;
   }
 }

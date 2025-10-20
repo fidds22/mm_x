@@ -256,18 +256,18 @@ const Contact = () => {
             </div>
 
             {/* Exhibition Stats */}
-            <div className="grid grid-cols-3 gap-4 mt-12">
-              <div className="text-center stats-card">
-                <div className="text-3xl font-bold gradient-text font-mono">24</div>
-                <div className="text-sm text-gray-400 font-mono tracking-wider">[OCTUBRE]</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 mb-8">
+              <div className="stats-card">
+                <div className="text-4xl font-bold gradient-text font-mono mb-2">24</div>
+                <div className="text-sm text-gray-300 font-mono tracking-wider">[OCTUBRE]</div>
               </div>
-              <div className="text-center stats-card">
-                <div className="text-3xl font-bold gradient-text font-mono">7PM</div>
-                <div className="text-sm text-gray-400 font-mono tracking-wider">[INAUGURACIÓN]</div>
+              <div className="stats-card">
+                <div className="text-4xl font-bold gradient-text font-mono mb-2">7PM</div>
+                <div className="text-sm text-gray-300 font-mono tracking-wider">[INAUGURACIÓN]</div>
               </div>
-              <div className="text-center stats-card">
-                <div className="text-3xl font-bold gradient-text font-mono">∞</div>
-                <div className="text-sm text-gray-400 font-mono tracking-wider">[CONTEMPLACIÓN]</div>
+              <div className="stats-card">
+                <div className="text-4xl font-bold gradient-text font-mono mb-2">∞</div>
+                <div className="text-sm text-gray-300 font-mono tracking-wider">[CONTEMPLACIÓN]</div>
               </div>
             </div>
           </div>
