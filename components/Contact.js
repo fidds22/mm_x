@@ -259,58 +259,59 @@ const Contact = () => {
 
             {/* Exhibition Stats */}
             <div className="grid grid-cols-3 gap-4 mt-12">
-              <div className="text-center glass-card p-4 rounded-xl">
-                <div className="text-3xl font-bold gradient-text">24</div>
-                <div className="text-sm text-gray-400">Octubre</div>
+              <div className="text-center stats-card">
+                <div className="text-3xl font-bold gradient-text font-mono">24</div>
+                <div className="text-sm text-gray-400 font-mono tracking-wider">[OCTUBRE]</div>
               </div>
-              <div className="text-center glass-card p-4 rounded-xl">
-                <div className="text-3xl font-bold gradient-text">7PM</div>
-                <div className="text-sm text-gray-400">Inauguración</div>
+              <div className="text-center stats-card">
+                <div className="text-3xl font-bold gradient-text font-mono">7PM</div>
+                <div className="text-sm text-gray-400 font-mono tracking-wider">[INAUGURACIÓN]</div>
               </div>
-              <div className="text-center glass-card p-4 rounded-xl">
-                <div className="text-3xl font-bold gradient-text">∞</div>
-                <div className="text-sm text-gray-400">Contemplación</div>
+              <div className="text-center stats-card">
+                <div className="text-3xl font-bold gradient-text font-mono">∞</div>
+                <div className="text-sm text-gray-400 font-mono tracking-wider">[CONTEMPLACIÓN]</div>
               </div>
             </div>
           </div>
 
           {/* Exhibition Details */}
           <div ref={formRef} className="glass-card p-8 rounded-2xl">
-            <h3 className="text-3xl font-bold font-display mb-6 gradient-text">
-              Detalles del Evento
+            <h3 className="text-3xl font-bold font-display mb-6 gradient-text font-mono tracking-wider">
+              [DETALLES DEL EVENTO]
             </h3>
             
             <div className="space-y-6">
               <div className="bg-gradient-to-r from-paint-pink/10 to-paint-blue/10 p-6 rounded-xl border border-paint-pink/20">
-                <h4 className="text-xl font-semibold text-paint-pink mb-3">Manoela Madera - Exposición Individual</h4>
-                <p className="text-gray-300 mb-4">
-                  Una exploración del color y la forma como lenguajes en movimiento. 
-                  Paisajes internos y energías colectivas que dialogan entre lo ancestral y lo contemporáneo.
+                <h4 className="text-xl font-semibold text-paint-pink mb-3 font-mono tracking-wider">[MANOELA MADERA - EXPOSICIÓN INDIVIDUAL]</h4>
+                <p className="text-gray-300 mb-4 font-mono text-sm leading-loose tracking-wide">
+                  UNA EXPLORACIÓN DEL COLOR Y LA FORMA COMO LENGUAJES EN MOVIMIENTO.<br/>
+                  PAISAJES INTERNOS Y ENERGÍAS COLECTIVAS QUE DIALOGAN ENTRE LO ANCESTRAL Y LO CONTEMPORÁNEO.
                 </p>
-                <div className="space-y-2 text-sm text-gray-400">
-                  <p><span className="font-semibold text-paint-blue">Fecha:</span> Jueves, 24 de octubre</p>
-                  <p><span className="font-semibold text-paint-blue">Hora:</span> 7:00 p.m.</p>
-                  <p><span className="font-semibold text-paint-blue">Lugar:</span> Instituto de Subcultura</p>
+                <div className="space-y-2 text-sm text-gray-400 font-mono">
+                  <p><span className="font-semibold text-paint-blue">[FECHA]:</span> JUEVES, 24 DE OCTUBRE</p>
+                  <p><span className="font-semibold text-paint-blue">[HORA]:</span> 7:00 P.M.</p>
+                  <p><span className="font-semibold text-paint-blue">[LUGAR]:</span> INSTITUTO DE SUBCULTURA</p>
                 </div>
               </div>
 
               <div className="bg-gradient-to-r from-paint-green/10 to-paint-purple/10 p-6 rounded-xl border border-paint-green/20">
-                <h4 className="text-xl font-semibold text-paint-green mb-3">Sobre la Obra</h4>
-                <p className="text-gray-300 mb-4">
-                  Cada obra funciona como un objeto de energía y contemplación. Los motivos recurrentes —ojos, ondas, círculos y portales— 
-                  conforman un vocabulario simbólico que se transforma y expande.
+                <h4 className="text-xl font-semibold text-paint-green mb-3 font-mono tracking-wider">[SOBRE LA OBRA]</h4>
+                <p className="text-gray-300 mb-4 font-mono text-sm leading-loose tracking-wide">
+                  CADA OBRA FUNCIONA COMO UN OBJETO DE ENERGÍA Y CONTEMPLACIÓN.<br/>
+                  LOS MOTIVOS RECURRENTES —OJOS, ONDAS, CÍRCULOS Y PORTALES—<br/>
+                  CONFORMAN UN VOCABULARIO SIMBÓLICO QUE SE TRANSFORMA Y EXPANDE.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-paint-pink/20 text-paint-pink rounded-full text-sm">Pinturas</span>
-                  <span className="px-3 py-1 bg-paint-blue/20 text-paint-blue rounded-full text-sm">Paneles en madera</span>
-                  <span className="px-3 py-1 bg-paint-green/20 text-paint-green rounded-full text-sm">Abstracción</span>
+                  <span className="px-3 py-1 bg-paint-pink/20 text-paint-pink rounded-full text-sm font-mono tracking-wider">[PINTURAS]</span>
+                  <span className="px-3 py-1 bg-paint-blue/20 text-paint-blue rounded-full text-sm font-mono tracking-wider">[PANELES EN MADERA]</span>
+                  <span className="px-3 py-1 bg-paint-green/20 text-paint-green rounded-full text-sm font-mono tracking-wider">[ABSTRACCIÓN]</span>
                 </div>
               </div>
 
               <div className="text-center">
-                <button className="bg-gradient-to-r from-paint-purple to-paint-pink px-8 py-4 rounded-lg text-white font-semibold hover:scale-105 transition-transform duration-300 flex items-center justify-center space-x-2 mx-auto">
+                <button className="btn-enhanced flex items-center justify-center space-x-2 mx-auto">
                   <Calendar className="w-5 h-5" />
-                  <span>Agregar al Calendario</span>
+                  <span className="font-mono tracking-wider">[AGREGAR AL CALENDARIO]</span>
                 </button>
               </div>
             </div>
