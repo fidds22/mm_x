@@ -197,11 +197,9 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 
             ref={titleRef}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-8"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-8 font-mono tracking-wider"
           >
-            <div className="intertwining-subtle" data-text="[INFORMACIÓN DE LA EXPOSICIÓN]">
-              <span className="intertwining-subtle-main font-mono tracking-wider">[INFORMACIÓN DE LA EXPOSICIÓN]</span>
-            </div>
+            [INFORMACIÓN DE LA EXPOSICIÓN]
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-paint-purple to-paint-pink mx-auto mb-8"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-mono text-sm leading-loose tracking-wide">
